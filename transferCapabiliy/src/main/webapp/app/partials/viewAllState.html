@@ -1,0 +1,18 @@
+<!--Body content-->
+<legend><center>View All State</center></legend>
+<table align="center" style="width:100%" class="table table-striped table-bordered table-hover" Style="margin-top: 100px;">
+    <thead>
+        <tr>
+            <th>State Name</th>
+            <th>Belonging Region Name</th>
+           
+            
+        </tr>
+    </thead>
+    <tr ng-repeat="state in allStateList ">
+
+        <td>{{state.stateName}}</td>
+        <td>{{state.regionName.regionName}}</td>
+        
+    </tr>
+</table>

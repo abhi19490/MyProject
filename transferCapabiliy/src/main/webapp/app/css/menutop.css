@@ -1,0 +1,281 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+#mymenu {
+  background: #3cd2fc;
+  margin: 0;
+  width: auto;
+  padding: 0;
+  line-height: 1;
+  display: block;
+  position: relative;
+  font-family: 'PT Sans', sans-serif;
+}
+#mymenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+#mymenu ul:after {
+  content: ' ';
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#mymenu ul li {
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: relative;
+}
+#mymenu ul li a {
+  text-decoration: none;
+  display: block;
+  margin: 0;
+  -webkit-transition: color .2s ease;
+  -moz-transition: color .2s ease;
+  -ms-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+}
+#mymenu ul li ul {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+#mymenu ul li ul li {
+  max-height: 0;
+  position: absolute;
+  -webkit-transition: max-height 0.4s ease-out;
+  -moz-transition: max-height 0.4s ease-out;
+  -ms-transition: max-height 0.4s ease-out;
+  -o-transition: max-height 0.4s ease-out;
+  transition: max-height 0.4s ease-out;
+  background: #ffffff;
+}
+#mymenu ul li ul li.my-sub:after {
+  display: block;
+  position: absolute;
+  content: '';
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: #000000;
+  z-index: 1;
+  top: 13px;
+  right: 15px;
+}
+#mymenu ul li ul li.my-sub:before {
+  display: block;
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  border: 3px solid transparent;
+  border-left-color: #ffffff;
+  z-index: 2;
+  top: 15px;
+  right: 15px;
+}
+#mymenu ul li ul li a {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: none;
+  color: #000000;
+  letter-spacing: 0;
+  display: block;
+  width: 140px;
+  padding: 11px 10px 11px 20px;
+}
+#mymenu ul li ul li:hover > a,
+#mymenu ul li ul li.active > a {
+  color: #4cb6ea;
+}
+#mymenu ul li ul li:hover:after,
+#mymenu ul li ul li.active:after {
+  background: #4cb6ea;
+}
+#mymenu ul li ul li:hover > ul {
+  left: 170px;
+  top: 0;
+}
+#mymenu ul li ul li:hover > ul > li {
+  max-height: 72px;
+  position: relative;
+}
+#mymenu > ul > li {
+  float: left;
+}
+#mymenu > ul > li:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  z-index: 0;
+  background: #ffffff;
+  -webkit-transition: height .2s;
+  -moz-transition: height .2s;
+  -ms-transition: height .2s;
+  -o-transition: height .2s;
+  transition: height .2s;
+}
+#mymenu > ul > li.my-sub > a {
+  padding-right: 40px;
+}
+#mymenu > ul > li.my-sub > a:after {
+  display: block;
+  content: '';
+  background: #ffffff;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  border-radius: 13px;
+  right: 14px;
+  top: 16px;
+}
+#mymenu > ul > li.my-sub > a:before {
+  display: block;
+  content: '';
+  border: 4px solid transparent;
+  border-top-color: #3cd2fc;
+  z-index: 2;
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: 16px;
+  top: 21px;
+}
+#mymenu > ul > li > a {
+  color: #ffffff;
+  padding: 15px 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  z-index: 2;
+  position: relative;
+}
+#mymenu > ul > li:hover:after,
+#mymenu > ul > li.active:after {
+  height: 100%;
+}
+#mymenu > ul > li:hover > a,
+#mymenu > ul > li.active > a {
+  color: #000000;
+}
+#mymenu > ul > li:hover > a:after,
+#mymenu > ul > li.active > a:after {
+  background: #000000;
+}
+#mymenu > ul > li:hover > a:before,
+#mymenu > ul > li.active > a:before {
+  border-top-color: #ffffff;
+}
+#mymenu > ul > li:hover > ul {
+  left: 0;
+}
+#mymenu > ul > li:hover > ul > li {
+  max-height: 72px;
+  position: relative;
+}
+#mymenu #my-button{
+  display: none;
+}
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+  #mymenu > ul {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.35s ease-out;
+    -moz-transition: max-height 0.35s ease-out;
+    -ms-transition: max-height 0.35s ease-out;
+    -o-transition: max-height 0.35s ease-out;
+    transition: max-height 0.35s ease-out;
+  }
+  #mymenu > ul.myopen {
+    max-height: 1000px;
+    border-top: 1px solid rgba(110, 110, 110, 0.25);
+  }
+  #mymenu ul {
+    width: 100%;
+  }
+  #mymenu ul > li {
+    float: none;
+  }
+  #mymenu ul li a {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 20px;
+  }
+  #mymenu ul > li:after {
+    display: none;
+  }
+  #mymenu ul li.my-sub > a:after,
+  #mymenu ul li.my-sub > a:before,
+  #mymenu ul li ul li.my-sub:after,
+  #mymenu ul li ul li.my-sub:before {
+    display: none;
+  }
+  #mymenu ul li ul,
+  #mymenu ul li ul li ul,
+  #mymenu ul li ul li:hover > ul {
+    left: 0;
+    position: relative;
+  }
+  #mymenu ul li ul li,
+  #mymenu ul li:hover > ul > li {
+    max-height: 999px;
+    position: relative;
+    background: none;
+  }
+  #mymenu ul li ul li a {
+    padding: 8px 20px 8px 35px;
+    color: #ffffff;
+    width: auto;
+  }
+  #mymenu ul li ul ul li a {
+    padding: 8px 20px 8px 50px;
+  }
+  #mymenu ul li ul li:hover > a {
+    color: #000000;
+  }
+  #mymenu #my-button{
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  #mymenu #menu-button:after {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 22px;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    right: 20px;
+    top: 16px;
+  }
+  #mymenu #menu-button:before {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 22px;
+    border-top: 2px solid #ffffff;
+    right: 20px;
+    top: 26px;
+  }
+}

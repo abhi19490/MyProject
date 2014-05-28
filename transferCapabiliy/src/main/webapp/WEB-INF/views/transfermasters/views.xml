@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="transfermasters/list">
+        <put-attribute name="body" value="/WEB-INF/views/transfermasters/list.jspx"/>
+    </definition>
+<definition extends="default" name="transfermasters/show">
+        <put-attribute name="body" value="/WEB-INF/views/transfermasters/show.jspx"/>
+    </definition>
+<definition extends="default" name="transfermasters/create">
+        <put-attribute name="body" value="/WEB-INF/views/transfermasters/create.jspx"/>
+    </definition>
+<definition extends="default" name="transfermasters/update">
+        <put-attribute name="body" value="/WEB-INF/views/transfermasters/update.jspx"/>
+    </definition>
+<definition extends="default" name="transfermasters/findTransferMastersByCorridorName">
+        <put-attribute name="body" value="/WEB-INF/views/transfermasters/findTransferMastersByCorridorName.jspx"/>
+    </definition>
+<definition extends="default" name="transfermasters/findTransferMastersByStartDateEquals">
+        <put-attribute name="body" value="/WEB-INF/views/transfermasters/findTransferMastersByStartDateEquals.jspx"/>
+    </definition>
+</tiles-definitions>

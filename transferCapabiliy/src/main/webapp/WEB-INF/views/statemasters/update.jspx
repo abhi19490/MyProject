@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_fiftyhertz_domain_StateMaster" modelAttribute="stateMaster" path="/statemasters" versionField="Version" z="vpLudFmM9EhSfOp3e08L57PKqyg=">
+        <field:input field="stateName" id="c_com_fiftyhertz_domain_StateMaster_stateName" z="H1R8Ym2SetA1NO5leD+UpDfGWRw="/>
+        <field:select field="regionName" id="c_com_fiftyhertz_domain_StateMaster_regionName" itemValue="id" items="${regionmasters}" path="/regionmasters" z="cC//pW3ATMbMRHwwREYOU7EOvro="/>
+    </form:update>
+</div>

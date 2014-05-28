@@ -1,0 +1,25 @@
+<div class="container-fluid" style="align-items:center;">
+	<div class="row-fluid">
+
+		<div>
+			<!--Body content-->
+
+			<table class="table table-striped" Style="margin-top: 100px;">
+				
+				<tr ng-repeat="emp in empList ">
+					<td>{{emp.empName}}</td>
+					<td>{{emp.empAddress}}</td>
+					<td>{{emp.email}}</td>
+					<td>{{emp.salary}}</td>
+					<td><input type="hidden" ng-model="emp.id"></td>
+					<td><a href="#/empUpdate/{{emp.id}}"><input type="button"
+							value="Update"></a>
+					<td><a ng-click="del(emp.id)"><input type="button" value="Delete"></a>
+				</tr>
+			</table>
+			<div>
+				<a href="#/emprecordsenter"><input type="button" value="Add Record"></a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_corridormaster" z="JaeTZw0o2JNm+CGn4bgznCK0Hwo=">
+            <menu:item id="i_corridormaster_new" messageCode="global_menu_new" url="/corridormasters?form" z="S8qHGHQUzbP/mN88bdwrxRQ3alk="/>
+            <menu:item id="i_corridormaster_list" messageCode="global_menu_list" url="/corridormasters?page=1&amp;size=${empty param.size ? 10 : param.size}" z="LgbcvGBt+ICDM5F0Iiv0Xfw/3uw="/>
+        </menu:category>
+        <menu:category id="c_regionmaster" z="GP8g/RgZz5Dy+weOFkAt3O9W47Y=">
+            <menu:item id="i_regionmaster_new" messageCode="global_menu_new" url="/regionmasters?form" z="2E7WMYXcagqrjrJ6/RwdAAUXGrw="/>
+            <menu:item id="i_regionmaster_list" messageCode="global_menu_list" url="/regionmasters?page=1&amp;size=${empty param.size ? 10 : param.size}" z="KRHDqUuYaA1fiVx/iOYdmOyLmD0="/>
+        </menu:category>
+        <menu:category id="c_transfermaster" z="Zg/4E/KMOaAe2Gigc8RjmULbKYQ=">
+            <menu:item id="i_transfermaster_new" messageCode="global_menu_new" url="/transfermasters?form" z="J2mVJe87crJ1uWTC24Z5vXo7FcQ="/>
+            <menu:item id="i_transfermaster_list" messageCode="global_menu_list" url="/transfermasters?page=1&amp;size=${empty param.size ? 10 : param.size}" z="/cI4ahuVEcDqqTKg8DlkZ9RdkDE="/>
+            <menu:item id="fi_transfermaster_corridorname" messageCode="global_menu_find" url="/transfermasters?find=ByCorridorName&amp;form" z="KgetZdgV/nrjWHfcJJu28l3VIi4="/>
+            <menu:item id="fi_transfermaster_startdateequals" messageCode="global_menu_find" url="/transfermasters?find=ByStartDateEquals&amp;form" z="O9m9hriwWbmdmzUYYPKY5MjfyCk="/>
+        </menu:category>
+        <menu:category id="c_statemaster" z="83fNv4qhnAFQuu9E6RGhQjzqIb8=">
+            <menu:item id="i_statemaster_new" messageCode="global_menu_new" url="/statemasters?form" z="VINX2V0gdejosuFP0iGOKi4Ycs0="/>
+            <menu:item id="i_statemaster_list" messageCode="global_menu_list" url="/statemasters?page=1&amp;size=${empty param.size ? 10 : param.size}" z="H44YNcW6bCYCHf+Z2TdKMxFgm9g="/>
+        </menu:category>
+    </menu:menu>
+</div>

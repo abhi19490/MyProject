@@ -1,0 +1,97 @@
+<div class="white-back">
+<div style="width: 100%">
+    
+    <div class="col-lg-12">
+            <div class="panel panel-info"style="box-shadow:4px 4px 13px 0px rgba(91, 89, 89, 0.88)">
+              <div class="panel-heading">
+                <h3 class="panel-title">Create New Corridor</h3>
+              </div>
+              <div class="panel-body">
+               <form class="form-horizontal">
+        <fieldset>
+
+            <!-- Form Name -->
+             <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="corridorName">Corridor
+                    Name</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-chevron-right"></i></span> 
+                        <input value="{{rec.startRegion.regionName}}-{{rec.endRegion.regionName}}" 
+                        id="corridorName" name="corridorName" type="text"
+                            placeholder="Select Starting and Ending Region"
+                            class="form-control input-md" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectStart">Source
+                    Region</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-chevron-right"></i></span> 
+                        <select ng-options="sourceRegion.regionName for sourceRegion in corridorsList"
+                            ng-model="rec.startRegion" id="selectStart" name="selectStart"
+                            class="form-control">
+                            <option value="">---Select Region---</option>
+                        </select>
+                        <!-- <input type="hidden"  ng-model="rec.corridorName"> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectDestination">Destination
+                    Region</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-chevron-right"></i></span> 
+                        <select ng-options="sourceRegion.regionName for sourceRegion in corridorsList"
+                            ng-model="rec.endRegion" id="selectDestination"
+                            name="selectDestination" class="form-control">
+                            <option value="">---Select Region---</option>
+                            
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="ttc">Total
+                    Transfer Capability</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-chevron-right"></i></span> 
+                        <input id="ttc"
+                            name="ttc" ng-model="rec.ttc" type="text" placeholder="Enter Transfer Capability"
+                            class="form-control input-md" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="addBtn"></label>
+                <div class="col-md-8">
+                    <button style="width: 24%" id="addBtn" name="addBtn" ng-click="createCorridor()"
+                        class="btn btn-info"><i class="glyphicon glyphicon-plus"></i> Add</button>
+                    <button style="width: 23%" id="clearBtn" name="clearBtn"
+                        class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancel</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+              </div>
+            </div>
+            
+          </div>
+</div>
+</div>
+
+

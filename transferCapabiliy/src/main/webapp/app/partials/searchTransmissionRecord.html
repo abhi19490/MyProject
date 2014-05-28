@@ -1,0 +1,77 @@
+<form class="form-inline">
+	<fieldset>
+
+		<!-- Form Name -->
+
+		<!-- Panel -->
+		<div class="panel panel-info" style="box-shadow:4px 4px 13px 0px rgba(91, 89, 89, 0.88)">
+			<div class="panel-heading">
+				<h3 class="panel-title">Search Transmission Record</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label style="padding-top: 5px" class="col-md-3 control-label"
+						for="corridorName">Select Corridor</label>
+					<div class="col-md-6">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-chevron-right"></i></span> <select
+								ng-change="searchByName(rec.corridorName.id)" id="corridorName"
+								name="corridorName" ng-model="rec.corridorName"
+								ng-options="corridorName.corridorName+' (TTC -- '+corridorName.ttc+')'  for corridorName in corridorsList"
+								class="form-control">
+								<option value="">----Select Corridor----</option>
+
+							</select> <span class="input-group-addon"><a
+								class="search glyphicon glyphicon-search"
+								ng-click="searchByName(rec.corridorName.id)"> Search</a></span>
+
+						</div>
+					</div>
+
+				</div>
+				<div style="align-items: center;">
+					<div>
+						<div>
+
+							<!--Body content-->
+
+							<div class="table-responsive">
+								<table id="my"
+									class="table table-bordered table-striped table-hover"
+									Style="margin-top: 30px;">
+									<tr>
+										<th>Corridor Name</th>
+										<th>Start Date</th>
+										<th>End Date</th>
+										<th>ATC</th>
+										<th>Revision</th>
+										<th>Comment</th>
+
+									</tr>
+									<tr ng-repeat="record in searchList">
+
+										<td>{{record.corridorName.corridorName}}</td>
+										<td>{{record.startDate | date:'dd-MMM-yyyy' }}</td>
+										<td>{{record.endDate | date:'dd-MMM-yyyy' }}</td>
+										<td>{{record.atc}}</td>
+										<td>{{record.revision}}</td>
+										<td>{{record.comment}}</td>
+
+										<!-- <input id={{transfer.id}} class="btn btn-info"
+                        type="button" value="Show on Map" data-toggle="modal"
+                        data-target=".bs-example-modal-lg" ng-click="showValue(transfer.id)"> -->
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Panel End -->
+
+
+
+	</fieldset>
+</form>

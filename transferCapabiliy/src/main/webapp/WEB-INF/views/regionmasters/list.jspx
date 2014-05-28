@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_fiftyhertz_domain_RegionMaster" items="${regionmasters}" z="J43xdRyjOC/AMwzfiXclnCyhhPw=">
+        <table:table data="${regionmasters}" id="l_com_fiftyhertz_domain_RegionMaster" path="/regionmasters" z="uT/qfDEuVAkkLR0DmBBZ+os6C78=">
+            <table:column id="c_com_fiftyhertz_domain_RegionMaster_regionName" property="regionName" z="343kPrBMldCdZFFqPhvSFj44pV4="/>
+            <table:column id="c_com_fiftyhertz_domain_RegionMaster_latitude" property="latitude" z="DTXkKRsg/9jNIkluTS2O28oiXV4="/>
+            <table:column id="c_com_fiftyhertz_domain_RegionMaster_longitude" property="longitude" z="6SqsQkxFvNo8kzBz+6GPpDgSyfM="/>
+        </table:table>
+    </page:list>
+</div>

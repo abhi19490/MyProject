@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_fiftyhertz_domain_RegionMaster" object="${regionmaster}" path="/regionmasters" z="/egDLMsc7pQV/nGYvOz5aTZDMwQ=">
+        <field:display field="regionName" id="s_com_fiftyhertz_domain_RegionMaster_regionName" object="${regionmaster}" z="drlfLAvGXKoPVjJvzmrZVIQJ6qw="/>
+        <field:display field="latitude" id="s_com_fiftyhertz_domain_RegionMaster_latitude" object="${regionmaster}" z="jLAHcAVd+/m6IjBlv8bOHjSALqE="/>
+        <field:display field="longitude" id="s_com_fiftyhertz_domain_RegionMaster_longitude" object="${regionmaster}" z="L8TtXDLPRnjgZ9k6hbPkyC6qav8="/>
+    </page:show>
+</div>

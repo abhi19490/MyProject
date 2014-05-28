@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_fiftyhertz_domain_CorridorMaster" object="${corridormaster}" path="/corridormasters" z="w8IemzuvYViuj1ZjsCssDd8RIc8=">
+        <field:display field="startRegion" id="s_com_fiftyhertz_domain_CorridorMaster_startRegion" object="${corridormaster}" z="Z6sbyeZ0V3VReTYA9idetrffqWc="/>
+        <field:display field="endRegion" id="s_com_fiftyhertz_domain_CorridorMaster_endRegion" object="${corridormaster}" z="MPcB7U6Q1DAImjfyfC8WthgHPOg="/>
+        <field:display field="ttc" id="s_com_fiftyhertz_domain_CorridorMaster_ttc" object="${corridormaster}" z="iDDstonjeKV9Nc7969KL68jd8CY="/>
+        <field:display field="corridorName" id="s_com_fiftyhertz_domain_CorridorMaster_corridorName" object="${corridormaster}" z="7awcB5CWlHFVuR+vZn3HgH3iG4g="/>
+    </page:show>
+</div>

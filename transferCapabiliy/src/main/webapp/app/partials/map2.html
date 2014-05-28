@@ -1,0 +1,227 @@
+
+<script type="text/javascript">
+
+	var reg1;
+	var reg2;
+	
+	var at;
+	
+	var location1;
+	var location2;
+	
+	var address1;
+	var address2;
+
+	var latlng;
+	var geocoder;
+	var map;
+	
+	var distance;
+	
+	// finds the coordinates for the two locations and calls the showMap() function
+	function initialize()
+	{
+		geocoder = new google.maps.Geocoder(); // creating a new geocode object
+		// getting the two address values
+		at=document.getElementById("at").value;
+		address1 = document.getElementById("src").value;
+		address2 = document.getElementById("dest").value;
+		reg1=document.getElementById("r1").value
+		reg2=document.getElementById("r2").value
+		// finding out the coordinates
+		if (geocoder) 
+		{
+			geocoder.geocode( { 'address': address1}, function(results, status) 
+			{
+				if (status == google.maps.GeocoderStatus.OK) 
+				{
+					//location of first address (latitude + longitude)
+					location1 = results[0].geometry.location;
+				} else 
+				{
+					alert("Geocode was not successful for the following reason: " + status);
+				}
+			});
+			geocoder.geocode( { 'address': address2}, function(results, status) 
+			{
+				if (status == google.maps.GeocoderStatus.OK) 
+				{
+					//location of second address (latitude + longitude)
+					location2 = results[0].geometry.location;
+					// calling the showMap() function to create and show the map 
+					showMap();
+				} else 
+				{
+					alert("Geocode was not successful for the following reason: " + status);
+				}
+			});
+		}
+ 
+	}
+		
+	// creates and shows the map
+	function showMap()
+	{
+		// center of the map (compute the mean value between the two locations)
+		
+		latlng = new google.maps.LatLng((location1.lat()+location2.lat())/2,(location1.lng()+location2.lng())/2);
+		
+		//latlng = new google.maps.LatLng((17.4012881+28.6263951)/2,(77.9953056+74.0049629)/2);
+		// set map options
+			// set zoom level
+			// set center
+			// map type
+		var mapOptions = 
+		{
+			zoom: 5,
+			center: latlng,
+			mapTypeId: google.maps.MapTypeId.TERRAIN
+		};
+		
+		// create a new map object
+			// set the div id where it will be shown
+			// set the map options
+		map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+	
+		// show route between the points
+		directionsService = new google.maps.DirectionsService();
+		directionsDisplay = new google.maps.DirectionsRenderer(
+		{
+			suppressMarkers: true,
+			suppressInfoWindows: true
+		});
+		directionsDisplay.setMap(map);
+		var request = {
+			origin:location1, 
+			destination:location2,
+			travelMode: google.maps.DirectionsTravelMode.DRIVING
+		};
+		/* directionsService.route(request, function(response, status) 
+		{
+			if (status == google.maps.DirectionsStatus.OK) 
+			{
+				directionsDisplay.setDirections(response);
+				distance = "The distance between the two points on the chosen route is: "+response.routes[0].legs[0].distance.text;
+				distance += "<br/>The aproximative driving time is: "+response.routes[0].legs[0].duration.text;
+				document.getElementById("distance_road").innerHTML = distance;
+			}
+		}); */
+		
+		// show a line between the two points
+		var line = new google.maps.Polyline({
+			map: map, 
+			path: [location1, location2],
+			strokeWeight: (at/100),
+			strokeOpacity: 0.6,
+			strokeColor: "#FF0000"
+		});
+		var line2 = new google.maps.Polyline({
+			map: map, 
+			path: [location1, location2],
+			strokeWeight: 30,
+			strokeOpacity:0.3,
+			strokeColor: "#000000"
+		});
+		
+		// create the markers for the two locations		
+		var marker1 = new google.maps.Marker({
+			map: map, 
+			position: location1,
+			title: "First location"
+		});
+		var marker2 = new google.maps.Marker({
+			map: map, 
+			position: location2,
+			title: "Second location"
+		});
+		document.getElementById("map_canvas").style['-webkit-box-shadow']="4px 4px 13px 0px rgba(91, 89, 89, 0.88)";
+		// create the text to be shown in the information windows
+		var text1 = '<div id="content" style="width:150px;border-radius:15px;">'+
+				'<h5 id="firstHeading">Source Region</h5>'+
+				'<div id="bodyContent">'+
+				'<p>Region Name: '+reg1+'</p>'+
+				'<p>ATC:'+at+'</p>'+
+				'</div>'+
+				'</div>';
+				
+		var text2 = '<div id="content" style="width:150px;border-radius:15px">'+
+			'<h5 id="firstHeading">Destination Region</h5>'+
+			'<div id="bodyContent">'+
+			
+			'<p>Region Name: '+reg2+'</p>'+
+			'<p>ATC:'+at+'</p>'+
+			'</div>'+
+			'</div>';
+		
+		// create info boxes for the two markers
+		var infowindow1 = new google.maps.InfoWindow({
+			content: text1
+			
+		});
+		var infowindow2 = new google.maps.InfoWindow({
+			content: text2
+			
+		});
+
+		// add action events so the info windows will be shown when the marker is clicked
+		google.maps.event.addListener(marker1, 'click', function() {
+			infowindow1.open(map,marker1);
+		});
+		google.maps.event.addListener(marker2, 'click', function() {
+			infowindow2.open(map,marker2);
+		});
+		
+		// compute distance between the two points
+		var R = 6371; 
+		var dLat = toRad(location2.lat()-location1.lat());
+		var dLon = toRad(location2.lng()-location1.lng()); 
+		
+		var dLat1 = toRad(location1.lat());
+		var dLat2 = toRad(location2.lat());
+		
+		var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+				Math.cos(dLat1) * Math.cos(dLat1) * 
+				Math.sin(dLon/2) * Math.sin(dLon/2); 
+		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+		var d = R * c;
+		
+		document.getElementById("distance_direct").innerHTML = "<br/>The distance between the two points (in a straight line) is: "+d;
+		
+	}
+	
+	function toRad(deg) 
+	{
+		return deg * Math.PI/180;
+	}
+</script>
+
+<div style="height:570px">
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><button id="m" name="my" class="btn btn-info" ng-click="my()">Show Record on Map</button></center></legend>
+
+
+<input id="cor" type="hidden"  value={{transfer.corridorName.corridorName}}>
+<input id="at" type="hidden" value={{transfer.atc}}>
+<input id="r1" type="hidden" value={{str}}>
+<input id="r2" type="hidden" value={{end}}>
+<input id="src" type="hidden" value={{source}}>
+<input id="dest" type="hidden" value={{desti}}>
+
+<!-- Button -->
+
+<!-- <div class="form-group">
+  <div class="col-md-4">
+    <button id="m" name="my" class="btn btn-info" ng-click="my()">Show Record on Map</button>
+  </div>
+</div> -->
+</fieldset>
+</form>
+
+<!-- <center><div style="width:100%; height:10%" id="distance_direct"></div></center> -->
+<!-- <center><div style="width:100%; height:10%" id="distance_road"></div></center> -->
+<center><div class="mapEffect" id="map_canvas" style="width:inherit;height:500px" ></div></center>
+
+</div>

@@ -1,0 +1,22 @@
+<!--Body content-->
+<legend><center>View All Regions</center></legend>
+<table align="center" style="width:100%" class="table table-striped table-bordered table-hover" Style="margin-top: 100px;">
+	<thead>
+		<tr>
+			<th>Region Name</th>
+			<th>Location</th>
+			
+		</tr>
+	</thead>
+	<tr ng-repeat="region in regionsList ">
+
+		<td>{{region.regionName}}</td>
+		<td>
+		<span>Latitude: {{region.latitude}},</span>
+		<span>  Longitude: {{region.longitude}}</span>
+        
+		
+		</td>
+		
+	</tr>
+</table>

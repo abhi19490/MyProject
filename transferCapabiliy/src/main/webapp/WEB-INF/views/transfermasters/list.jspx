@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_fiftyhertz_domain_TransferMaster" items="${transfermasters}" z="QNxM3UtZF7vAaigBM6Ae+E69RHw=">
+        <table:table data="${transfermasters}" id="l_com_fiftyhertz_domain_TransferMaster" path="/transfermasters" z="PdC7qxG52CFHV9eknHgLiWdmJpM=">
+            <table:column id="c_com_fiftyhertz_domain_TransferMaster_corridorName" property="corridorName" z="dYds8nYlnMxWTxd8TBdu8yFLPHE="/>
+            <table:column date="true" dateTimePattern="${transferMaster_startdate_date_format}" id="c_com_fiftyhertz_domain_TransferMaster_startDate" property="startDate" z="sb7GeXVtDS7NYDH481EIRhmTWQE="/>
+            <table:column date="true" dateTimePattern="${transferMaster_enddate_date_format}" id="c_com_fiftyhertz_domain_TransferMaster_endDate" property="endDate" z="sPfHkXFyAPf5hBoZRo8RD1+1+QU="/>
+            <table:column id="c_com_fiftyhertz_domain_TransferMaster_revision" property="revision" z="VVtjS79Of/sAHG3j7RORwTiZ5K8="/>
+            <table:column id="c_com_fiftyhertz_domain_TransferMaster_comment" property="comment" z="UF9RTjbKRtptO10tUl+Jg9yZXK4="/>
+            <table:column id="c_com_fiftyhertz_domain_TransferMaster_atc" property="atc" z="vUO4PlSze/Xc8RQW8480CbSuV/Y="/>
+        </table:table>
+    </page:list>
+</div>

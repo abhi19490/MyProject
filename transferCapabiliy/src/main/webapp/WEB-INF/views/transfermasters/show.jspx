@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_fiftyhertz_domain_TransferMaster" object="${transfermaster}" path="/transfermasters" z="HAK1XGGB9F6aZVslM8xretKi2CI=">
+        <field:display field="corridorName" id="s_com_fiftyhertz_domain_TransferMaster_corridorName" object="${transfermaster}" z="iMl0td5nKhv0r9Cmw1vwsxDyDsU="/>
+        <field:display date="true" dateTimePattern="${transferMaster_startdate_date_format}" field="startDate" id="s_com_fiftyhertz_domain_TransferMaster_startDate" object="${transfermaster}" z="pAZ1TyzaeRPrJAVd6mM5NY8wx6s="/>
+        <field:display date="true" dateTimePattern="${transferMaster_enddate_date_format}" field="endDate" id="s_com_fiftyhertz_domain_TransferMaster_endDate" object="${transfermaster}" z="FZhEjLyJs+A+wjq5vWq2UHJ1pso="/>
+        <field:display field="revision" id="s_com_fiftyhertz_domain_TransferMaster_revision" object="${transfermaster}" z="JbFsMptt4ykN8InUPMwjHMiq8JM="/>
+        <field:display field="comment" id="s_com_fiftyhertz_domain_TransferMaster_comment" object="${transfermaster}" z="yhLAbpvUSiOPF77bXApqlowzZ3w="/>
+        <field:display field="atc" id="s_com_fiftyhertz_domain_TransferMaster_atc" object="${transfermaster}" z="r0mhbokQWm/L585zVce8TPzd6lo="/>
+    </page:show>
+</div>

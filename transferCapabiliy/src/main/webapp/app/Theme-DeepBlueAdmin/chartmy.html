@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="http://shieldui.com/shared/components/latest/css/shieldui-all.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-mint/all.min.css" />
+    <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+</head>
+<body class="theme-light">
+    <div id="chart"></div>
+    <script type="text/javascript">
+        $(function () {
+            $("#chart").shieldChart({
+                theme: "light",
+                exportOptions: {
+                    image: true,
+                    print: true
+                },
+                axisX: {
+                    categoricalValues: ["2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012"]
+                },
+                axisY: {
+                    title: {
+                        text: "Price (EUR per kWh)"
+                    }
+                },
+                primaryHeader: {
+                    text: "Electricity prices"
+                },
+                tooltipSettings: {
+                    axisMarkers: {
+                        enabled: true,
+                        mode: "xy",
+                        width: 1,
+                        zIndex: 3
+                    }
+                },
+                dataSeries: [{
+                    seriesType: "spline",
+                    collectionAlias: "Households",
+                    data: [0.164, 0.173, 0.184, 0.167, 0.177, 0.189, 0.180, 0.183, 0.188, 0.160, 0.176, 0.178]
+                }, {
+                    seriesType: "spline",
+                    collectionAlias: "Industry",
+                    data: [0.103, 0.105, 0.112, 0.111, 0.102, 0.099, 0.110, 0.113, 0.117, 0.119, 0.123, 0.117]
+                }]
+            });
+        });
+    </script>
+</body>
+</html>

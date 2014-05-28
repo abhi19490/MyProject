@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="regionmasters/list">
+        <put-attribute name="body" value="/WEB-INF/views/regionmasters/list.jspx"/>
+    </definition>
+<definition extends="default" name="regionmasters/show">
+        <put-attribute name="body" value="/WEB-INF/views/regionmasters/show.jspx"/>
+    </definition>
+<definition extends="default" name="regionmasters/create">
+        <put-attribute name="body" value="/WEB-INF/views/regionmasters/create.jspx"/>
+    </definition>
+<definition extends="default" name="regionmasters/update">
+        <put-attribute name="body" value="/WEB-INF/views/regionmasters/update.jspx"/>
+    </definition>
+</tiles-definitions>

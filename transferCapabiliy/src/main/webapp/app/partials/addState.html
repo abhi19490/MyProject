@@ -1,0 +1,55 @@
+<form class="form-horizontal">
+	<fieldset>
+
+		<!-- Form Name -->
+		<legend>
+			<center>Add New State</center>
+		</legend>
+
+		<!-- Prepended text-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="stateName">State
+				Name</label>
+			<div class="col-md-4">
+				<div class="input-group">
+					<span class="input-group-addon"><i
+						class="glyphicon glyphicon-chevron-right"></i></span> <input
+						autocomplete="on" id="stateName" name="stateName"
+						class="form-control uppercase" placeholder="State Name"
+						type="text" ng-model="rec.stateName" required>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Select Basic -->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="selectRegion">Belonging
+				Region</label>
+			<div class="col-md-4">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-chevron-right"></i></span> 
+					<input type="hidden" >
+					<select id="selectRegion" name="selectRegion" ng-options="regionName.regionName for regionName in statesList " class="form-control" ng-model="rec.regionName" pattern="[A-Z]{2}" required="required">
+						<option value="">---Select Region---</option>
+						
+					</select>
+				</div>
+			</div>
+		</div>
+		<!-- Button (Double) -->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="addBtn"></label>
+			<div class="col-md-8">
+				<button style="width: 24%" id="addBtn" name="addBtn"
+					ng-click="create()" class="btn btn-info">
+					<i class="glyphicon glyphicon-plus"></i> Add
+				</button>
+				<button style="width: 23%" id="clearBtn" name="clearBtn"
+					class="btn btn-danger">
+					<i class="glyphicon glyphicon-remove"></i> Cancel
+				</button>
+			</div>
+		</div>
+	</fieldset>
+</form>

@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="col-sm-6" style="height:75px;">
+       <div class='col-md-5'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker8'>
+                    <input id="s" type='text' class="form-control" />
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-5'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker9'>
+                    <input id="e" type='text' class="form-control" />
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $.fn.datetimepicker.defaults = {
+    	    
+    	    pickTime: false                 //en/disables the time picker
+    	};
+        $(function () {
+            $('#datetimepicker8').datetimepicker({pickTime: false,showToday: true});
+            $('#datetimepicker9').datetimepicker({pickTime: false,showToday: true});
+            $("#datetimepicker8").on("dp.change",function (e) {
+            	console.log("Start Date Selected");
+               $('#datetimepicker9').data("DateTimePicker").setMinDate(e.date);
+            });
+            $("#datetimepicker9").on("dp.change",function (e) {
+            	console.log("End Date Selected");
+               $('#datetimepicker8').data("DateTimePicker").setMaxDate(e.date);
+            });
+        });
+    </script>
+</div>

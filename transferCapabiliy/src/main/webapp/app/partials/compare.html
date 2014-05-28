@@ -1,0 +1,56 @@
+
+<!-- <div>
+	<ul>
+		<li ng-repeat="comp in compList">{{comp.atc}}</li>
+
+
+	</ul>
+
+</div> -->
+<div>
+	<form class="form-horizontal">
+		<fieldset>
+
+			<!-- Form Name -->
+			<legend>Form Name</legend>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<div class="col-md-12">
+					<div class="col-md-4"></div>
+					<div id="sl" class="col-md-4" ng-init="scope = { c: 2020,f:2010 }">
+					    <input type="hidden" ng-model="f">
+					    <input type="hidden" ng-model="c">
+					   <!--  <p>{{f}} and {{c}}</p> -->
+					    
+						<slider id="sl" floor={{f}} ceiling={{c}} step="1" 
+							ng-model="cost" ng-click="searchFun()"></slider>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+				<!-- <script>
+					app = angular.module('APP', [ 'uiSlider' ]);
+					app.controller('ItemCtrl', [ '$scope', function($scope) {
+						$scope.cost = 350
+					} ]);
+				</script> -->
+
+				<label class="col-md-4 control-label" for="textinput"></label>
+				<div class="col-md-4">
+					<input id="textinput" name="textinput" type="hidden"
+						ng-model="cost" placeholder="Enter Year" class="form-control input-md">
+
+				</div>
+				<!-- <label class="col-md-4 control-label" for="singlebutton"></label>
+				<div class="col-md-4">
+					<button id="singlebutton" name="singlebutton"
+						ng-click="searchFun()" class="btn btn-info">Search</button>
+				</div> -->
+
+			</div>
+
+		</fieldset>
+	</form>
+
+</div>
+<div id="chart"></div>

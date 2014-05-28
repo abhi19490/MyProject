@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_fiftyhertz_domain_StateMaster" items="${statemasters}" z="2yYcgNotl0nByGcRTlv2Wg+zNxk=">
+        <table:table data="${statemasters}" id="l_com_fiftyhertz_domain_StateMaster" path="/statemasters" z="W0dDgY3qSmnCe5QK8USQ4ViA3dc=">
+            <table:column id="c_com_fiftyhertz_domain_StateMaster_stateName" property="stateName" z="kJB5NH+h3d6unLm8+14OgSN2miM="/>
+            <table:column id="c_com_fiftyhertz_domain_StateMaster_regionName" property="regionName" z="eFtYgJYAm1quDy5E50Ef7mR6PsM="/>
+        </table:table>
+    </page:list>
+</div>
